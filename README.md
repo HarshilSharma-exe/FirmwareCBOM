@@ -1,177 +1,226 @@
- 
-# FirmwareCBOM
+# 🛡️ FirmwareCBOM
 
-### An Object-Oriented Framework for Cryptographic Inventory and Risk Assessment of IoT Firmware
+### 🔐 Cryptographic Inventory & Risk Assessment for IoT Firmware
 
-FirmwareCBOM is a collaborative C++ project developed by a team of four students to explore the identification, documentation, and security assessment of cryptographic components in Internet of Things (IoT) firmware.
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0F2027,50:203A43,100:2C5364&height=180&section=header&text=FirmwareCBOM&fontSize=48&fontColor=55E6C1&animation=fadeIn&fontAlignY=45&desc=Mapping%20Cryptography.%20Understanding%20Risk.&descSize=16&descAlignY=72" width="100%" alt="FirmwareCBOM project banner"/>
+</p>
 
-Our goal is to develop a modular framework that identifies cryptographic components, generates a Cryptographic Bill of Materials (CBOM), and helps assess potential cryptographic security risks.
+<p align="center">
+  <img src="https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++"/>
+  <img src="https://img.shields.io/badge/Paradigm-OOP-7C3AED?style=for-the-badge" alt="Object-oriented programming"/>
+  <img src="https://img.shields.io/badge/Domain-IoT%20Security-0F766E?style=for-the-badge" alt="IoT security"/>
+  <img src="https://img.shields.io/badge/Stage-Early%20Development-EA580C?style=for-the-badge" alt="Early development"/>
+</p>
 
-**Project status:** Early development — initial C++ OOP prototype implemented; automated scanning and reporting are planned.
-
----
-
-## Team Members
-
-This project is being developed collaboratively by four team members.
-
-| Member | Name | Primary Responsibility |
-|---|---|---|
-| Member 1 | [Name] | Core OOP design and component modelling |
-| Member 2 | [Name] | Firmware file handling and cryptographic scanning |
-| Member 3 | [Name] | Cryptographic information and risk assessment |
-| Member 4 | [Name] | CBOM generation, testing, documentation and integration |
-
-*Responsibilities may evolve as the project develops. All team members will contribute to understanding, reviewing, and integrating the complete system.*
+<p align="center">
+  <b>Discover cryptography. Build the inventory. Understand the risk.</b>
+</p>
 
 ---
 
-## 1. About the Project
+## 🌟 About the Project
 
-Firmware is the software embedded in devices such as smart cameras, Wi-Fi routers, connected sensors, and smart locks.
+**FirmwareCBOM** is a collaborative C++ project developed by a team of four students to explore cryptographic inventory and security assessment in Internet of Things (IoT) firmware.
 
-Firmware may use cryptographic algorithms to protect data, authenticate users, verify software integrity, and secure communications.
+IoT devices such as smart cameras, Wi-Fi routers, connected sensors, and smart locks rely on firmware to control their operations. Their software may use cryptographic algorithms to protect data, verify identities, and secure communications.
 
-A Cryptographic Bill of Materials (CBOM) is an inventory of cryptographic components used by a software system.
+However, identifying and tracking these cryptographic components can become difficult when documentation is incomplete or security requirements change.
 
-FirmwareCBOM aims to explore how such an inventory can be created and used to identify components that may require further security review.
+FirmwareCBOM aims to address this challenge by developing an object-oriented framework that identifies recognizable cryptographic references in supported firmware-related source files, organizes detected components into a **Cryptographic Bill of Materials (CBOM)**, and assesses potential security risks using documented rules.
 
-## 2. Problem Statement
+> 🚧 **Development status:** Early development. The initial C++ OOP prototype is working. Automated scanning, CBOM generation, and risk assessment remain under development.
 
-Cryptographic components can be difficult to track when firmware projects contain multiple algorithms or have incomplete documentation.
+## 🎯 The Problem We're Solving
 
-Developers need ways to identify cryptographic components, understand where they are used, assess relevant security concerns, and plan necessary updates.
+Imagine maintaining hundreds of IoT devices without a reliable inventory of the cryptographic algorithms used in their firmware.
 
-Our project aims to simplify this process through a modular C++ application.
+Developers may need to determine:
 
-## 3. Project Objectives
+- 🔍 Which cryptographic algorithms are present?
+- 📂 Where were those algorithms detected?
+- ⚠️ Which components may require security review?
+- 🔄 Which components might need replacement or migration?
+- 🔐 How can the organization prepare for future cryptographic changes?
 
-- Identify cryptographic algorithms in supported firmware inputs.
-- Represent detected components using object-oriented C++ classes.
-- Generate a structured Cryptographic Bill of Materials.
-- Assess potential risks using documented security rules.
-- Provide recommendations for components requiring review.
-- Explore future support for post-quantum cryptography (PQC) readiness.
+FirmwareCBOM aims to make this process more structured and easier to investigate.
 
-## 4. Planned System Architecture
+## 💡 What Is a CBOM?
 
-The proposed workflow consists of the following modules:
+A **Cryptographic Bill of Materials (CBOM)** is an inventory of cryptographic components used by a software system.
 
-1. **Firmware Loader:** Reads supported input files.
-2. **Crypto Scanner:** Searches for recognizable cryptographic algorithm references.
-3. **Crypto Component Model:** Stores information about detected components.
-4. **Crypto Database:** Maintains algorithm information and assessment rules.
-5. **Risk Analyzer:** Evaluates components against the defined rules.
-6. **CBOM Generator:** Produces a structured inventory and summary report.
-
-These modules represent the planned architecture; not all modules have been implemented.
-
-## 5. Technology Stack
-
-- C++
-- Object-Oriented Programming
-- STL and file handling
-- Clang / Apple Clang
-- Visual Studio Code
-- Git and GitHub
-
-## 6. Current Progress
-
-### Initial OOP prototype
-
-The team has begun learning the project fundamentals and developing its initial C++ implementation.
-
-The current prototype includes:
-
-- A `CryptoComponent` class.
-- Attributes for algorithm name, component type, and key-size information.
-- A `display()` method.
-- Separate demonstration objects for AES, RSA, and SHA-256.
-- Successful execution of the demonstration program.
-
-### Development status
-
-| Feature | Status |
+| Component | Purpose |
 |---|---|
-| Project definition and initial design | In progress |
-| Basic `CryptoComponent` class | Implemented |
-| Demonstration objects | Implemented |
-| Automated file scanning | Planned |
-| CBOM generation | Planned |
-| Risk assessment | Planned |
-| Structured report output | Planned |
-| PQC readiness assessment | Future extension |
+| AES | Symmetric encryption |
+| RSA | Public-key cryptographic operations |
+| SHA-256 | Cryptographic hashing |
+| Digital signatures | Authenticity and integrity verification |
+| Cryptographic libraries | Reusable security implementations |
 
-## 7. Development Roadmap
+A CBOM records what is present. Additional analysis is needed to determine whether a component is appropriate for its particular use.
 
-### Phase 1 — Foundation
-- Establish the project structure.
-- Implement the initial OOP model.
-- Improve class design and encapsulation.
+## ⚙️ Planned Features
 
-### Phase 2 — Cryptographic Detection
-- Implement file input.
-- Build the initial scanner.
-- Identify supported cryptographic algorithm references.
+| Feature | Description | Status |
+|---|---|---|
+| 🧩 OOP component model | Represent cryptographic components as C++ objects | 🟢 Implemented |
+| 📁 Firmware file input | Read supported source and configuration files | ⚪ Planned |
+| 🔎 Crypto scanner | Detect recognizable algorithm references | ⚪ Planned |
+| 📋 CBOM generation | Create a structured component inventory | ⚪ Planned |
+| 🛡️ Risk assessment | Apply documented security rules | ⚪ Planned |
+| 💬 Recommendations | Highlight components requiring review | ⚪ Planned |
+| ⚛️ PQC readiness | Explore post-quantum migration planning | 🔵 Future scope |
+| 🧪 Experimental evaluation | Measure detection accuracy and false positives | 🔵 Future scope |
 
-### Phase 3 — CBOM Generation
-- Store detected components.
-- Generate a structured inventory.
-- Validate report output using sample inputs.
+*Status reflects the current project stage and will be updated as features are implemented and tested.*
 
-### Phase 4 — Risk Assessment
-- Define documented assessment rules.
-- Identify components requiring security review.
-- Generate recommendations and risk summaries.
+## 🏗️ Planned Architecture
 
-### Phase 5 — Evaluation and Extensions
-- Test using controlled sample firmware-related inputs.
-- Measure detection accuracy and false positives.
-- Explore binary firmware analysis and PQC readiness.
+```mermaid
+flowchart TD
+    A["📂 Firmware Input"] --> B["🔎 Crypto Scanner"]
+    B --> C["🧩 CryptoComponent Model"]
+    C --> D["📚 Crypto Database"]
+    D --> E["🛡️ Risk Analyzer"]
+    C --> F["📋 CBOM Generator"]
+    E --> G["📊 Security Report"]
+    F --> G
 
-## 8. Project Structure
-
-The initial implementation is intentionally simple:
-
-```text
-FirmwareCBOM/
-├── main.cpp
-├── README.md
-└── .gitignore
+    style A fill:#DBEAFE,stroke:#2563EB,color:#172554
+    style B fill:#CCFBF1,stroke:#0F766E,color:#134E4A
+    style C fill:#EDE9FE,stroke:#7C3AED,color:#3B0764
+    style D fill:#FEF3C7,stroke:#D97706,color:#78350F
+    style E fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D
+    style F fill:#D1FAE5,stroke:#059669,color:#064E3B
+    style G fill:#E0E7FF,stroke:#4F46E5,color:#312E81
 ```
 
-As development progresses, the codebase will be organized into separate source and header files for the project's modules.
+**Important:** This is the intended architecture, not a diagram of fully implemented modules. The first version will focus on source-file analysis before any exploration of compiled firmware binaries.
 
-## 9. Collaboration Workflow
+## 💻 Technology Stack
 
-The team uses GitHub to maintain a shared codebase and document development progress.
+<p>
+  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++"/>
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
+  <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white" alt="Visual Studio Code"/>
+  <img src="https://img.shields.io/badge/Clang-262D3A?style=flat-square&logo=llvm&logoColor=white" alt="Clang"/>
+</p>
 
-Our intended workflow is:
+- **Language:** C++
+- **Paradigm:** Object-Oriented Programming
+- **Compiler:** Clang / Apple Clang or another compatible compiler
+- **Development environment:** Visual Studio Code
+- **Version control:** Git and GitHub
 
-1. Select a task or feature.
-2. Implement and test the changes.
-3. Commit changes with a meaningful message.
-4. Review and integrate the work.
-5. Update the README and roadmap when appropriate.
+## 📈 Current Progress
 
-## 10. Learning Objectives
+### ✅ Initial OOP Prototype
 
-This project provides practical experience with:
+The initial prototype demonstrates a `CryptoComponent` class with:
 
-- Classes and objects
-- Encapsulation and constructors
-- Inheritance and polymorphism
-- File handling and STL containers
-- Modular software design
-- Git and collaborative development
-- Basic testing and security assessment
+- `algorithm` — stores the algorithm name.
+- `type` — stores the component type.
+- `keySize` — stores the key-size field.
+- `display()` — prints the object's information.
 
-## 11. Disclaimer
+The program creates three demonstration objects representing AES, RSA, and SHA-256 and successfully displays their attributes.
 
-FirmwareCBOM is an educational project under development. The initial prototype is not a complete firmware security scanner or a security certification tool.
+### 🗺️ Development Roadmap
 
-The presence of an algorithm name alone does not establish whether a system is secure. A meaningful assessment requires consideration of the algorithm's purpose, implementation, configuration, key management, and threat model.
+- [x] Define the project problem and objectives.
+- [x] Implement the initial `CryptoComponent` class.
+- [x] Create and display AES, RSA, and SHA-256 objects.
+- [ ] Improve the class design using constructors and encapsulation.
+- [ ] Implement supported file input.
+- [ ] Develop the initial cryptographic scanner.
+- [ ] Generate a structured CBOM report.
+- [ ] Implement and validate risk-assessment rules.
+- [ ] Evaluate the prototype using controlled sample inputs.
+- [ ] Explore compiled firmware analysis and PQC readiness.
+
+## 👥 Team FirmwareCBOM
+
+Built collaboratively by a team of four students.
+
+| Member | Name | Responsibility |
+|---|---|---|
+| Member 1 | `Your Name` | Core OOP design |
+| Member 2 | `Member Name` | Firmware input and scanning |
+| Member 3 | `Member Name` | Cryptographic information and risk assessment |
+| Member 4 | `Member Name` | CBOM generation, testing and integration |
+
+*Replace these placeholders with the actual team members and agreed responsibilities.*
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- A compatible C++ compiler
+- Git
+- A terminal or command-line interface
+
+### 1. Clone the repository
+
+Replace `YOUR-USERNAME` with the GitHub username or organization that owns the repository.
+
+```bash
+git clone https://github.com/YOUR-USERNAME/FirmwareCBOM.git
+cd FirmwareCBOM
+```
+
+### 2. Compile the current prototype
+
+If `main.cpp` is in the repository root:
+
+```bash
+clang++ -std=c++17 main.cpp -o firmwarecbom
+```
+
+### 3. Run the program
+
+```bash
+./firmwarecbom
+```
+
+The current prototype displays the information stored in the demonstration cryptographic component objects.
+
+## 🤝 Collaboration
+
+We use GitHub to manage source code, track tasks, and document our progress.
+
+Our intended workflow:
+
+1. Create or select a task.
+2. Implement the feature in a separate branch when appropriate.
+3. Compile and test the changes.
+4. Review and merge the changes.
+5. Update documentation to reflect completed work.
+
+We welcome constructive feedback and suggestions that help improve the design and implementation.
+
+## 🔬 Future Research Directions
+
+Potential extensions include:
+
+- More robust source-level cryptographic detection.
+- Evaluation against labelled sample inputs.
+- False-positive and false-negative analysis.
+- Cryptographic risk assessment based on usage and configuration.
+- Exploration of binary firmware analysis.
+- Post-quantum cryptography readiness and migration planning.
+
+These directions will be pursued only as the implementation and evaluation develop.
+
+## ⚠️ Disclaimer
+
+FirmwareCBOM is an educational project under development. Its initial prototype is not a complete firmware security scanner and must not be treated as a security certification tool.
+
+Recognizing an algorithm name in source code does not prove that the algorithm is actually used at runtime or that the system is secure or insecure. Reliable assessment requires consideration of implementation, configuration, usage, key management, and the relevant threat model.
 
 ---
 
-**Built collaboratively, one feature at a time.**
+<p align="center">
+  <b>🔐 FirmwareCBOM</b><br/>
+  <i>Learn. Build. Analyze. Improve.</i>
+</p>
