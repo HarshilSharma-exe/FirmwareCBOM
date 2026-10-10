@@ -66,7 +66,7 @@ A CBOM records what is present. Additional analysis is needed to determine wheth
 | 🧩 OOP component model | Represent cryptographic components as C++ objects | 🟢 Implemented |
 | 📁 Firmware file input | Read supported source and configuration files | ⚪ Planned |
 | 🔎 Crypto scanner | Detect recognizable algorithm references | ⚪ Planned |
-| 📋 CBOM generation | Create a structured component inventory | ⚪ Planned |
+| 📋 CBOM generation | Create a structured component inventory | 🟡 In progress |
 | 🛡️ Risk assessment | Apply documented security rules | ⚪ Planned |
 | 💬 Recommendations | Highlight components requiring review | ⚪ Planned |
 | ⚛️ PQC readiness | Explore post-quantum migration planning | 🔵 Future scope |
