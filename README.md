@@ -152,38 +152,6 @@ Built collaboratively by a team of four students.
 
 *Replace these placeholders with the actual team members and agreed responsibilities.*
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- A compatible C++ compiler
-- Git
-- A terminal or command-line interface
-
-### 1. Clone the repository
-
-Replace `YOUR-USERNAME` with the GitHub username or organization that owns the repository.
-
-```bash
-git clone https://github.com/YOUR-USERNAME/FirmwareCBOM.git
-cd FirmwareCBOM
-```
-
-### 2. Compile the current prototype
-
-If `main.cpp` is in the repository root:
-
-```bash
-clang++ -std=c++17 main.cpp -o firmwarecbom
-```
-
-### 3. Run the program
-
-```bash
-./firmwarecbom
-```
-
-The current prototype displays the information stored in the demonstration cryptographic component objects.
 
 ## 🤝 Collaboration
 
