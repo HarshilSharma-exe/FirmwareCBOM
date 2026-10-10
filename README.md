@@ -145,10 +145,10 @@ Built collaboratively by a team of four students.
 
 | Member | Name | Responsibility |
 |---|---|---|
-| Member 1 | `Your Name` | Core OOP design |
-| Member 2 | `Member Name` | Firmware input and scanning |
-| Member 3 | `Member Name` | Cryptographic information and risk assessment |
-| Member 4 | `Member Name` | CBOM generation, testing and integration |
+| Member 1 | `Shivansh Prakash` | Core OOP design |
+| Member 2 | `Harshil Sharma` | Firmware input and scanning |
+| Member 3 | `Navneet Chauhan` | Cryptographic information and risk assessment |
+| Member 4 | `Aditya Srivastava` | CBOM generation, testing and integration |
 
 *Replace these placeholders with the actual team members and agreed responsibilities.*
 
