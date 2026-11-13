@@ -1,194 +1,232 @@
 # 🛡️ FirmwareCBOM
 
-### 🔐 Cryptographic Inventory & Risk Assessment for IoT Firmware
+### 🔐 Cryptographic Bill of Materials (CBOM) Generation & Risk Assessment for IoT Firmware
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0F2027,50:203A43,100:2C5364&height=180&section=header&text=FirmwareCBOM&fontSize=48&fontColor=55E6C1&animation=fadeIn&fontAlignY=45&desc=Mapping%20Cryptography.%20Understanding%20Risk.&descSize=16&descAlignY=72" width="100%" alt="FirmwareCBOM project banner"/>
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0F2027,50:203A43,100:2C5364&height=180&section=header&text=FirmwareCBOM&fontSize=48&fontColor=55E6C1&animation=fadeIn&fontAlignY=45&desc=Discover%20Cryptography.%20Build%20the%20CBOM.%20Assess%20Security%20Risk.&descSize=16&descAlignY=72" width="100%" alt="FirmwareCBOM project banner"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++"/>
-  <img src="https://img.shields.io/badge/Paradigm-OOP-7C3AED?style=for-the-badge" alt="Object-oriented programming"/>
-  <img src="https://img.shields.io/badge/Domain-IoT%20Security-0F766E?style=for-the-badge" alt="IoT security"/>
-  <img src="https://img.shields.io/badge/Stage-Early%20Development-EA580C?style=for-the-badge" alt="Early development"/>
-</p>
-
-<p align="center">
-  <b>Discover cryptography. Build the inventory. Understand the risk.</b>
+  <img src="https://img.shields.io/badge/Language-C%2B%2B17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++17"/>
+  <img src="https://img.shields.io/badge/Paradigm-OOP%20(4%20Pillars)-7C3AED?style=for-the-badge" alt="OOP"/>
+  <img src="https://img.shields.io/badge/Security-NIST%20Standards-0F766E?style=for-the-badge" alt="NIST"/>
+  <img src="https://img.shields.io/badge/Output-JSON%20CBOM-EA580C?style=for-the-badge" alt="JSON"/>
+  <img src="https://img.shields.io/badge/Status-Fully%20Functional-10B981?style=for-the-badge" alt="Status"/>
 </p>
 
 ---
 
-## 🌟 About the Project
+## 🌟 Project Overview
 
-**FirmwareCBOM** is a collaborative C++ project developed by a team of four students to explore cryptographic inventory and security assessment in Internet of Things (IoT) firmware.
+**FirmwareCBOM** is an educational, object-oriented C++17 framework designed to inspect IoT firmware source-code files, identify recognizable cryptographic algorithms, maintain an organized database of cryptographic security standards, evaluate security risks using explainable rules, and generate a standardized JSON **Cryptographic Bill of Materials (CBOM)** report.
 
-IoT devices such as smart cameras, Wi-Fi routers, connected sensors, and smart locks rely on firmware to control their operations. Their software may use cryptographic algorithms to protect data, verify identities, and secure communications.
+### Core Processing Pipeline
 
-However, identifying and tracking these cryptographic components can become difficult when documentation is incomplete or security requirements change.
-
-FirmwareCBOM aims to address this challenge by developing an object-oriented framework that identifies recognizable cryptographic references in supported firmware-related source files, organizes detected components into a **Cryptographic Bill of Materials (CBOM)**, and assesses potential security risks using documented rules.
-
-> 🚧 **Development status:** Early development. The initial C++ OOP prototype is working. Automated scanning, CBOM generation, and risk assessment remain under development.
-
-## 🎯 The Problem We're Solving
-
-Imagine maintaining hundreds of IoT devices without a reliable inventory of the cryptographic algorithms used in their firmware.
-
-Developers may need to determine:
-
-- 🔍 Which cryptographic algorithms are present?
-- 📂 Where were those algorithms detected?
-- ⚠️ Which components may require security review?
-- 🔄 Which components might need replacement or migration?
-- 🔐 How can the organization prepare for future cryptographic changes?
-
-FirmwareCBOM aims to make this process more structured and easier to investigate.
-
-## 💡 What Is a CBOM?
-
-A **Cryptographic Bill of Materials (CBOM)** is an inventory of cryptographic components used by a software system.
-
-| Component | Purpose |
-|---|---|
-| AES | Symmetric encryption |
-| RSA | Public-key cryptographic operations |
-| SHA-256 | Cryptographic hashing |
-| Digital signatures | Authenticity and integrity verification |
-| Cryptographic libraries | Reusable security implementations |
-
-A CBOM records what is present. Additional analysis is needed to determine whether a component is appropriate for its particular use.
-
-## ⚙️ Planned Features
-
-| Feature | Description | Status |
-|---|---|---|
-| 🧩 OOP component model | Represent cryptographic components as C++ objects | 🟢 Implemented |
-| 📁 Firmware file input | Read supported source and configuration files | ⚪ Planned |
-| 🔎 Crypto scanner | Detect recognizable algorithm references | ⚪ Planned |
-| 📋 CBOM generation | Create a structured component inventory | 🟡 In progress |
-| 🛡️ Risk assessment | Apply documented security rules | ⚪ Planned |
-| 💬 Recommendations | Highlight components requiring review | ⚪ Planned |
-| ⚛️ PQC readiness | Explore post-quantum migration planning | 🔵 Future scope |
-| 🧪 Experimental evaluation | Measure detection accuracy and false positives | 🔵 Future scope |
-
-*Status reflects the current project stage and will be updated as features are implemented and tested.*
-
-## 🏗️ Planned Architecture
-
-```mermaid
-flowchart TD
-    A["📂 Firmware Input"] --> B["🔎 Crypto Scanner"]
-    B --> C["🧩 CryptoComponent Model"]
-    C --> D["📚 Crypto Database"]
-    D --> E["🛡️ Risk Analyzer"]
-    C --> F["📋 CBOM Generator"]
-    E --> G["📊 Security Report"]
-    F --> G
-
-    style A fill:#DBEAFE,stroke:#2563EB,color:#172554
-    style B fill:#CCFBF1,stroke:#0F766E,color:#134E4A
-    style C fill:#EDE9FE,stroke:#7C3AED,color:#3B0764
-    style D fill:#FEF3C7,stroke:#D97706,color:#78350F
-    style E fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D
-    style F fill:#D1FAE5,stroke:#059669,color:#064E3B
-    style G fill:#E0E7FF,stroke:#4F46E5,color:#312E81
+```
+[FirmwareLoader] ──> Reads source code file safely (Abstraction)
+       │
+       ▼
+[CryptoScanner]  ──> Scans text & extracts cryptographic references (Encapsulation)
+       │
+       ▼
+[CryptoComponent]──> Shared data structure for each detection
+       │
+       ▼
+[CryptoDatabase] ──> Queries authoritative guidance: NIST / RFC (Information Hiding)
+       │
+       ▼
+[RiskAnalyzer]   ──> Evaluates security risks via Polymorphic Rules Engine (Polymorphism)
+       │
+       ▼
+[CBOMGenerator]  ──> Serializes inventory & findings to valid JSON (RFC 8259)
+       │
+       ▼
+[cbom_report.json]
 ```
 
-**Important:** This is the intended architecture, not a diagram of fully implemented modules. The first version will focus on source-file analysis before any exploration of compiled firmware binaries.
+---
 
-## 💻 Technology Stack
+## 👥 Equal 4-Member Division & Viva Responsibilities
 
-<p>
-  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++"/>
-  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git"/>
-  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
-  <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white" alt="Visual Studio Code"/>
-  <img src="https://img.shields.io/badge/Clang-262D3A?style=flat-square&logo=llvm&logoColor=white" alt="Clang"/>
-</p>
+The project is equally distributed among all four team members (**Navneet**, **Harshil**, **Aditya**, and **Shivansh**). Each member owns an essential feature, writes approximately equal lines of code, and has their own **Object-Oriented Programming (OOP) concepts** to defend in front of the teacher:
 
-- **Language:** C++
-- **Paradigm:** Object-Oriented Programming
-- **Compiler:** Clang / Apple Clang or another compatible compiler
-- **Development environment:** Visual Studio Code
-- **Version control:** Git and GitHub
+| Member | Module & Feature | Assigned Files | OOP Concepts to Defend |
+|---|---|---|---|
+| **Navneet** | **Loader Subsystem & Core Pipeline** | `include/BaseLoader.h`<br>`include/FirmwareLoader.h`<br>`src/FirmwareLoader.cpp`<br>`main.cpp`<br>`tests/loader_tests.cpp` | **Abstraction & Inheritance:**<br>Created abstract base class `BaseLoader` with pure virtual method `loadFile()`, extended by `FirmwareLoader`. Coordinates high-level pipeline. |
+| **Harshil** | **Scanner & Pattern Matching Engine** | `include/BaseScanner.h`<br>`include/CryptoScanner.h`<br>`src/CryptoScanner.cpp`<br>`tests/scanner_tests.cpp` | **Encapsulation & Inheritance:**<br>Extends `BaseScanner`. Encapsulates regex tokenization, boundary detection, line tracking, and key-size parsing. |
+| **Aditya** | **NIST Crypto Database & Standardization** | `include/BaseDatabase.h`<br>`include/CryptoDatabase.h`<br>`src/CryptoDatabase.cpp`<br>`tests/database_tests.cpp` | **Encapsulation & Abstraction:**<br>Extends `BaseDatabase`. Encapsulates NIST standards mapping, alias resolver, and case normalization in an anonymous namespace. |
+| **Shivansh** | **Polymorphic Risk Engine & CBOM Generator** | `include/RiskRule.h`<br>`include/RiskAnalyzer.h`<br>`src/RiskAnalyzer.cpp`<br>`include/BaseReportGenerator.h`<br>`include/CBOMGenerator.h`<br>`src/CBOMGenerator.cpp`<br>`tests/risk_analyzer_tests.cpp`<br>`tests/report_tests.cpp` | **Runtime Polymorphism & Inheritance:**<br>Implements the Strategy/Rule pattern using an abstract base class `RiskRule` with 5 derived rules and dynamic dispatch (`vtable`). Extends `BaseReportGenerator`. |
 
-## 📈 Current Progress
+---
 
-### ✅ Initial OOP Prototype
+## 🏛️ All 4 Pillars of OOP (Teacher Defense Guide)
 
-The initial prototype demonstrates a `CryptoComponent` class with:
+### 1. Encapsulation (Data Hiding & Security)
+* **Explained by:** **Harshil & Aditya**
+* **In Harshil's module:** `CryptoScanner.cpp` encapsulates regular expression compilation, token boundary detection, and whitespace trimming. Outside code cannot see or corrupt scanner mechanics.
+* **In Aditya's module:** `CryptoDatabase.cpp` hides the static hash map of NIST standards and alias normalization inside an anonymous namespace (`namespace { ... }`). External code can only query through the public `findAlgorithm()` method.
+* **Const-Correctness:** Member functions that do not alter class state are marked `const` (e.g. `findAlgorithm(...) const`, `assessRisk(...) const`).
 
-- `algorithm` — stores the algorithm name.
-- `type` — stores the component type.
-- `keySize` — stores the key-size field.
-- `display()` — prints the object's information.
+### 2. Abstraction (Hiding Complexity Behind Clean Interfaces)
+* **Explained by:** **Navneet & Aditya**
+* **In Navneet's module:** `BaseLoader.h` exposes a clean interface `loadFile()`. Callers in `main.cpp` do not need to know how file buffers, disk streams, or permissions work.
+* **In Aditya's module:** `BaseDatabase.h` abstracts away how cryptographic facts are stored (whether in memory, SQLite, or an API).
 
-The program creates three demonstration objects representing AES, RSA, and SHA-256 and successfully displays their attributes.
+### 3. Inheritance (Code Reusability & "is-a" Relationship)
+* **Explained by:** **All 4 Members!**
+* **Navneet:** `class FirmwareLoader : public BaseLoader`
+* **Harshil:** `class CryptoScanner : public BaseScanner`
+* **Aditya:** `class CryptoDatabase : public BaseDatabase`
+* **Shivansh:** `class LegacyCipherRule : public RiskRule`, `class BrokenHashRule : public RiskRule`, etc., and `class CBOMGenerator : public BaseReportGenerator`
 
-### 🗺️ Development Roadmap
+### 4. Polymorphism (Runtime Dynamic Dispatch)
+* **Explained by:** **Shivansh**
+* **In Shivansh's module (`include/RiskRule.h` and `src/RiskAnalyzer.cpp`):**
+  Rules are stored as base pointers: `std::vector<std::unique_ptr<RiskRule>>`. During assessment, `rule->evaluate()` is dynamically resolved via the virtual function table (`vtable`) to the correct derived rule at runtime.
 
-- [x] Define the project problem and objectives.
-- [x] Implement the initial `CryptoComponent` class.
-- [x] Create and display AES, RSA, and SHA-256 objects.
-- [ ] Improve the class design using constructors and encapsulation.
-- [ ] Implement supported file input.
-- [ ] Develop the initial cryptographic scanner.
-- [ ] Generate a structured CBOM report.
-- [ ] Implement and validate risk-assessment rules.
-- [ ] Evaluate the prototype using controlled sample inputs.
-- [ ] Explore compiled firmware analysis and PQC readiness.
+---
 
-## 👥 Team FirmwareCBOM
+## 📜 Cryptographic Standards & Rules Applied
 
-Built collaboratively by a team of four students.
+| Algorithm | Category | Starter Guidance & Rule | Severity | Authoritative Reference |
+|---|---|---|---|---|
+| **AES** | Symmetric Encryption | Modern cipher; requires secure mode (GCM/CCM) and unique IV. Defaults to Manual Review if mode is unstated. | Informational / Manual Review | NIST FIPS 197 / SP 800-38D |
+| **DES** | Symmetric Encryption | 56-bit legacy cipher; vulnerable to practical brute-force cracking. | **High** | NIST SP 800-131A Rev. 2 |
+| **MD5** | Hash | Collision resistance broken (trivial practical collisions). Unfit for signatures or integrity. | **High** | IETF RFC 6151 / NIST SP 800-131A |
+| **SHA-1** | Hash | Weak collision resistance (SHAttered attack). Disallowed for digital signatures. | **Medium** | NIST SP 800-131A Rev. 2 / RFC 6194 |
+| **RSA** | Asymmetric Cryptography | Keys < 2048 bits are vulnerable to factorization. Requires OAEP/PSS padding. | **High** (< 2048) / Informational | NIST SP 800-57 Part 1 Rev. 5 |
+| **DSA** | Digital Signature | Deprecated for digital signature generation in modern standards. | **Medium** | NIST FIPS 186-5 |
+| **ECC** | Asymmetric Cryptography | Elliptic curve cryptography (P-256, Curve25519); parameters must be validated. | Informational / Manual Review | NIST SP 800-186 / FIPS 186-5 |
+| **SHA-256** | Hash | Approved 256-bit hash. Note: Digest length is **not** an encryption key. | Informational | NIST FIPS 180-4 |
+| **ML-KEM** | Post-Quantum | NIST-standardized module-lattice key-encapsulation mechanism. | Informational | NIST FIPS 203 |
+| **ML-DSA** | Post-Quantum | NIST-standardized module-lattice digital signature algorithm. | Informational | NIST FIPS 204 |
+| **Unknown** | Unrecognized | Any algorithm not in database is flagged for manual audit rather than assumed safe. | **Manual Review** | Defense-in-depth policy |
 
-| Member | Name | Responsibility |
-|---|---|---|
-| Member 1 | `Shivansh Prakash` | Core OOP design |
-| Member 2 | `Harshil Sharma` | Firmware input and scanning |
-| Member 3 | `Navneet Chauhan` | Cryptographic information and risk assessment |
-| Member 4 | `Aditya Srivastava` | CBOM generation, testing and integration |
+---
 
-*Replace these placeholders with the actual team members and agreed responsibilities.*
+## 💻 How to Build and Run on macOS / Linux
 
+### 1. Compile the Main Program
+```bash
+clang++ -std=c++17 -Wall -Wextra -Iinclude main.cpp src/*.cpp -o firmwarecbom
+```
 
-## 🤝 Collaboration
+### 2. Run on Sample Firmware
+```bash
+./firmwarecbom
+```
 
-We use GitHub to manage source code, track tasks, and document our progress.
+**Expected Terminal Output:**
+```text
+Scan completed.
+Components detected: 25
+Report saved to cbom_report.json
+```
 
-Our intended workflow:
+---
 
-1. Create or select a task.
-2. Implement the feature in a separate branch when appropriate.
-3. Compile and test the changes.
-4. Review and merge the changes.
-5. Update documentation to reflect completed work.
+## 🎯 Live Viva Demonstration (How to Run Different Files)
 
-We welcome constructive feedback and suggestions that help improve the design and implementation.
+FirmwareCBOM dynamically scans **any C++ source file** passed as a command-line argument:
 
-## 🔬 Future Research Directions
+```bash
+# 1. Test clean code with NO cryptography (Output: 0 components)
+./firmwarecbom samples/clean_math.cpp
 
-Potential extensions include:
+# 2. Test legacy insecure code (Output: 4 components, DES & MD5 flagged High)
+./firmwarecbom samples/insecure_firmware.cpp
 
-- More robust source-level cryptographic detection.
-- Evaluation against labelled sample inputs.
-- False-positive and false-negative analysis.
-- Cryptographic risk assessment based on usage and configuration.
-- Exploration of binary firmware analysis.
-- Post-quantum cryptography readiness and migration planning.
+# 3. Test modern post-quantum firmware (Output: 4 components, ML-KEM & ML-DSA)
+./firmwarecbom samples/modern_firmware.cpp
 
-These directions will be pursued only as the implementation and evaluation develop.
+# 4. Test comprehensive firmware (Output: 25 components)
+./firmwarecbom sample.cpp
+```
 
-## ⚠️ Disclaimer
+---
 
-FirmwareCBOM is an educational project under development. Its initial prototype is not a complete firmware security scanner and must not be treated as a security certification tool.
+## 🧪 How Each Member Runs Their Unit Test in the Viva
 
-Recognizing an algorithm name in source code does not prove that the algorithm is actually used at runtime or that the system is secure or insecure. Reliable assessment requires consideration of implementation, configuration, usage, key management, and the relevant threat model.
+When the professor asks each student to run their specific part live:
+
+* **Navneet runs (Loader & Abstraction):**
+  ```bash
+  clang++ -std=c++17 -Wall -Wextra -Iinclude tests/loader_tests.cpp src/FirmwareLoader.cpp -o test_loader && ./test_loader && rm -f test_loader
+  ```
+* **Harshil runs (Scanner & Pattern Matching):**
+  ```bash
+  clang++ -std=c++17 -Wall -Wextra -Iinclude tests/scanner_tests.cpp src/CryptoScanner.cpp -o test_scanner && ./test_scanner && rm -f test_scanner
+  ```
+* **Aditya runs (Database & NIST Standards):**
+  ```bash
+  clang++ -std=c++17 -Wall -Wextra -Iinclude tests/database_tests.cpp src/CryptoDatabase.cpp -o test_database && ./test_database && rm -f test_database
+  ```
+* **Shivansh runs (Risk Engine & Polymorphism):**
+  ```bash
+  clang++ -std=c++17 -Wall -Wextra -Iinclude tests/risk_analyzer_tests.cpp src/RiskAnalyzer.cpp -o test_risk && ./test_risk && rm -f test_risk
+  ```
+
+---
+
+## 📊 Sample Generated JSON Output (`cbom_report.json`)
+
+```json
+{
+  "schemaVersion": "1.0",
+  "components": [
+    {
+      "algorithmName": "AES",
+      "category": "Symmetric Encryption",
+      "usage": "Encryption",
+      "keySizeBits": 256,
+      "sourceFile": "sample.cpp",
+      "lineNumber": 18,
+      "evidence": "// Reference 1: AES with 256-bit key"
+    },
+    {
+      "algorithmName": "SHA-256",
+      "category": "Hash",
+      "usage": "Hashing",
+      "keySizeBits": null,
+      "sourceFile": "sample.cpp",
+      "lineNumber": 27,
+      "evidence": "// Reference 2: SHA-256 Hash for Secure Boot verification"
+    }
+  ],
+  "findings": [
+    {
+      "algorithmName": "DES",
+      "severity": "High",
+      "reason": "DES utilizes an insecure 56-bit effective key length vulnerable to practical brute-force recovery (NIST SP 800-131A).",
+      "recommendation": "Deprecate immediately and migrate to AES-128 or AES-256.",
+      "sourceFile": "sample.cpp",
+      "lineNumber": 42
+    },
+    {
+      "algorithmName": "MD5",
+      "severity": "High",
+      "reason": "MD5 has severe collision vulnerabilities allowing rapid practical forgery (RFC 6151).",
+      "recommendation": "Do not use for security purposes. Migrate immediately to SHA-256 or SHA-3.",
+      "sourceFile": "sample.cpp",
+      "lineNumber": 37
+    }
+  ]
+}
+```
+
+---
+
+## 🎓 Viva Q&A Cheat Sheet
+
+1. **Why `std::optional<int>` instead of `-1` for key size?**
+   > *In C++17, `std::optional` explicitly models presence or absence. Hashes (like SHA-256) produce digests and do not use keys. Using `-1` is an unsafe magic number. `std::optional` serializes cleanly to JSON `null`.*
+2. **What happens if an unknown cipher is detected?**
+   > *`CryptoDatabase` returns `std::nullopt`, and `RiskAnalyzer` assigns `"severity": "Manual Review"`. In security, unknown components must never be assumed safe.*
+3. **Where is Polymorphism in your code?**
+   > *In `src/RiskAnalyzer.cpp` and `include/RiskRule.h`. An abstract base class `RiskRule` is extended by 5 derived rule classes. `RiskAnalyzer` iterates over `std::vector<std::unique_ptr<RiskRule>>` and invokes `rule->evaluate()` polymorphically via the `vtable`.*
 
 ---
 
 <p align="center">
-  <b>🔐 FirmwareCBOM</b><br/>
-  <i>Learn. Build. Analyze. Improve.</i>
+  <b>FirmwareCBOM</b> • <i>Object-Oriented Cryptographic Bill of Materials Framework</i>
 </p>
